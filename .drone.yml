@@ -30,8 +30,10 @@ steps:
     target: /root/six
     secrets: [ rsync_key ]
 
-- name: notice
+- name: build
   image: curlimages/curl
   commands:
-    - | 
-    curl 'https://oapi.dingtalk.com/robot/send?access_token=e214de934c9e0942042656b49a0003917b0d387d44e5a56a8780d98dc24c3414' -H 'Content-Type: application/json' -d '{"msgtype": "text","text": {"content": "deploy Drone"}}'
+    - |
+      curl 'https://oapi.dingtalk.com/robot/send?access_token=e214de934c9e0942042656b49a0003917b0d387d44e5a56a8780d98dc24c3414' -H 'Content-Type: application/json' -d '{"msgtype": "text","text": {"content": "deploy Drone"}}'
+
+    
