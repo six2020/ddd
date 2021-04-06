@@ -1,0 +1,15 @@
+---
+kind: pipeline
+type: docker
+name: web
+
+steps:
+- name: install
+  image: node:alpine3.13
+  commands:
+    - npm i
+
+- name: tests
+  image: node:alpine3.13
+  commands:
+    - npm run tests
