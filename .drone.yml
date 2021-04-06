@@ -30,7 +30,7 @@ steps:
     target: /root/six
     secrets: [ rsync_key ]
 
-- name: build
+- name: notice
   image: curlimages/curl
   commands:
     - |
