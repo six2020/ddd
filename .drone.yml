@@ -13,3 +13,19 @@ steps:
   image: node:alpine3.13
   commands:
     - npm run tests
+
+- name: build
+  image: node:alpine3.13
+  commands:
+    - npm run build
+
+- name: rsync
+  image: drillster/drone-rsync
+  settings:
+    key:
+      from_secret: rsync_key
+    hosts:
+      - 39.102.77.26
+    source: ./dist/*
+    target: /root/six
+    secrets: [ rsync_key ]
